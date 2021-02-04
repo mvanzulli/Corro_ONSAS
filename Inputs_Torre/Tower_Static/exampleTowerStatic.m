@@ -11,7 +11,7 @@ else
 end
 
 
-dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS' ]                   ;
+dirOnsas = [ pwd '\..\..\..\..\..\ONSAS\ONSAS' ]                   ;
 dirFuerzaViento  = [pwd '/../../..\Fuerza_Viento']              ; 
 
 addpath (dirOnsas,dirTowerGeometry,dirFuerzaViento)          ;
