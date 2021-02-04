@@ -28,3 +28,4 @@ octave-workspace
 /examples/strings.txt
 *.dat
 *.vtk
+*.tex
