@@ -34,3 +34,4 @@ octave-workspace
 Inputs_Torre/Tower_Dynmic/dampingMattp1.dat
 Inputs_Torre/Tower_Dynmic/Ktp1.dat
 Inputs_Torre/Tower_Dynmic/massMattp1.dat
+*.dat
