@@ -51,9 +51,9 @@ E = 210e9 ;  nu = 0.3 ;  rho = 7850 ;
 						% 3 green 2 ing (tipo de deformacion unitaria)
 materialsParams = {[ rho 3 E nu ]} ;
 
-elementsParams = { 1; [ 2 1 ]} ; 
-
-if TorreOptimized ==0
+elementsParams = { 1; [ 2 1 ]} ;      		% { 1 elementos de nodos ; ....   1] Matriz de masa concentrada 
+						% { 2 elementos de barra ; ....   2] Matriz de masa consistente
+if TorreOptimized == 0
     A1 = 5100e-6;
     d1 = sqrt (4*A1/pi);
     A2 = 1790e-6;
@@ -140,13 +140,13 @@ userLoadsFilename = 'myFuerzaZtorre'
 
 %% Booleans
 reportBoolean = 1 ;
-storeBoolean = 1 ;
+storeBoolean = 1 ; 	 		% matUs desplazamientos ; matNs fuerzas normales; 
 stabilityAnalysisBoolean = 0 ;
 
 % ================================================================= 
 %% Ploteo
-plotParamsVector = [0 ];
-plotParamsVector = [ 3 300 ]; sectPar = [ 12 .25 .25 ] ;
+plotParamsVector = [0];
+plotParamsVector = [ 3 300 ];
 printFlag = 0 ;
 
 
