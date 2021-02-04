@@ -26,3 +26,5 @@ octave-workspace
 *.lnx
 /examples/*/output/*
 /examples/strings.txt
+*.dat
+*.vtk
