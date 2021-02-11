@@ -5,17 +5,16 @@ clear all, close all
 TorreOptimized  = 1; % one to omptimzed any alse to classic
 
 if TorreOptimized == 1
-  dirTowerGeometry  = [pwd '/../../..\auxTowerGeometryOptimized'] ;
+  dirTowerGeometry  = [pwd '/../..\auxTowerGeometryOptimized'] ;
 else
-  dirTowerGeometry  = [pwd '/../../..\auxCableGeometry']          ;
+  dirTowerGeometry  = [pwd '/../..\auxTowerGeometry']          ;
 end
 
 
-dirOnsas = [ pwd '\..\..\..\..\..\ONSAS\ONSAS' ]                   ;
-dirFuerzaViento  = [pwd '/../../..\Fuerza_Viento']              ; 
+dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS\src' ]                   ;
+dirFuerzaViento  = [pwd '/../..\Fuerza_Viento']              ; 
 
 addpath (dirOnsas,dirTowerGeometry,dirFuerzaViento)          ;
-
 % ======================================================================
 %% General data
 
@@ -97,24 +96,26 @@ springsParams = { [ inf  0  inf  0  inf   0 ]} ;
 controlDofs = [ 183 5 -1 ] ;
 
 % analysis parameters
-stopTolIts       = 30     ;
-stopTolDeltau    = 1.0e-8 ;
-stopTolForces    = 1.0e-8  ;
+stopTolIts       = 50     ;
+stopTolDeltau    = 1.0e-6 ;
+stopTolForces    = 1.0e-6  ;
 
 		
 % Static
 booleanSelfWeightZ = 1 ;
-loadsParams   = {[ 1 1   1 0 0 0 0 0 ]} ;
-targetLoadFactrNR  = 1e3    ;
-nLoadSteps         = 10     ;
+loadsParams   = {[ 1 1   0 0 0 0 0 0 ]} ;
+targetLoadFactrNR  = 200    ;
+nLoadSteps         = 50     ;
 numericalMethodParams = [ 1 stopTolDeltau stopTolForces stopTolIts ...
                              targetLoadFactrNR nLoadSteps ] ; 
 
+userLoadsFilename = 'myFuerzaZtorreStatic' ;                         
+                         
 % ======================================================================
 %% Booleans
 reportBoolean = 1 ;
 storeBoolean = 1 ;
-stabilityAnalysisBoolean = 1 ;
+stabilityAnalysisBoolean = 2 ;
 
 % ================================================================= 
 %% Ploteo

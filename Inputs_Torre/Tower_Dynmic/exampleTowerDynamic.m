@@ -7,11 +7,11 @@ TorreOptimized  = 1; % one to omptimzed any alse to classic
 if TorreOptimized == 1
   dirTowerGeometry  = [pwd '/../..\auxTowerGeometryOptimized'] ;
 else
-  dirTowerGeometry  = [pwd '/../..\auxCableGeometry']          ;
+  dirTowerGeometry  = [pwd '/../..\auxTowerGeometry']          ;
 end
 
 
-dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS' ]                   ;
+dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS\src' ]                   ;
 dirFuerzaViento  = [pwd '/../..\Fuerza_Viento']              ; 
 
 addpath (dirOnsas,dirTowerGeometry,dirFuerzaViento)          ;
@@ -116,7 +116,7 @@ numericalMethodParams = [ 4 timeIncr finalTime stopTolDeltau stopTolForces stopT
 % ======================================================================
 %% Loads
 booleanSelfWeightZ = 0 ;
-loadsParams   = {[ 1 1   1 0 0 0 0 0 ]} ;
+loadsParams   = {[ 1 1   0 0 1 0 0 0 ]} ;
 %compute Fviento
 DensidadAire = 1.2   ;
 C_d          = 3.4   ; 
@@ -136,7 +136,7 @@ Tinicio             = 0 ;
 Tfinal              = finalTime;
 loadFactorsFunc     = @(t) F_t(round(t/timeIncr)+1)*(t>Tinicio)*(t<Tfinal);
 
-userLoadsFilename = 'myFuerzaZtorre'
+userLoadsFilename = 'myFuerzaZtorreDynamic'
 
 %% Booleans
 reportBoolean = 1 ;

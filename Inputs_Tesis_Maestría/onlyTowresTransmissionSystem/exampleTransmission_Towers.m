@@ -2,7 +2,7 @@
 %
 %%
 clear all, close all
-dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS' ] ;
+dirOnsas = [ pwd '\..\..\..\..\ONSAS\ONSAS\src' ] ;
 dirTowerGeometry = [pwd '/../..\auxTowerGeometry'] ;
 addpath (dirOnsas,dirTowerGeometry)  ;
 problemName = 'Transmission_Towers'  ;
