@@ -103,8 +103,8 @@ stopTolForces    = 1.0e-6  ;
 		
 % Static
 booleanSelfWeightZ = 1 ;
-loadsParams   = {[ 1 1   0 0 0 0 0 0 ]} ;
-targetLoadFactrNR  = 200    ;
+loadsParams   = {[ 1 1   0 0 1 0 0 0 ]} ;
+targetLoadFactrNR  = 100    ;
 nLoadSteps         = 50     ;
 numericalMethodParams = [ 1 stopTolDeltau stopTolForces stopTolIts ...
                              targetLoadFactrNR nLoadSteps ] ; 
